@@ -222,4 +222,8 @@ Big forms (30+ fields) are hard to maintain.
 The idea is to keep everything related to your form (initial values, validation rules, appearance, effects, bussiness logic...) in one place - a configuration.
 Also, performance - in this library only what needs to be rendered, gets rendered.
 
+## Other packages
+
+- [Formy](https://www.github.com/dusanjovanov/formy)
+
 <!-- anything below this line will be safe from template removal -->
