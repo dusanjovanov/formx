@@ -14,6 +14,7 @@ import {
   Error,
   FormProp,
   ChangeType,
+  UpdateReason,
 } from './types';
 import * as React from 'react';
 import { FieldConfig } from '.';
@@ -47,7 +48,7 @@ type State = {
   fields: IndexObject;
 };
 
-type SubscribeCallback = (args: FormProp) => void;
+type SubscribeCallback = (args: FormProp, reason: UpdateReason) => void;
 
 export type Broadcast = (name: string, type: ChangeType) => void;
 
@@ -198,7 +199,12 @@ export class Form extends Component<Props, State> {
         }
       }
     });
-    this.subscribers.forEach((cb) => cb(this.getFormProp()));
+    this.subscribers.forEach((cb) =>
+      cb(this.getFormProp(), {
+        name,
+        type,
+      })
+    );
   };
 
   validateField = (name: string) => {
