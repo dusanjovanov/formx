@@ -1,5 +1,5 @@
 {
-  "version": "0.4.4",
+  "version": "0.4.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -34,6 +34,7 @@
   "repository": {
     "url": "https://github.com/dusanjovanov/formx"
   },
+  "homepage": "https://formx.netlify.app",
   "author": "Dusan Jovanov",
   "module": "dist/formx2.esm.js",
   "size-limit": [
