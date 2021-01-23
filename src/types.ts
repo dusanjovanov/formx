@@ -38,21 +38,23 @@ export type FieldConfig<Context = IndexObject, Props = PropsObject> = {
   effect?: (
     context: Context,
     form: FormPropWithMutations,
-    reason: {
-      name: string;
-      type: ChangeType;
-    }
+    reason: UpdateReason
   ) => void;
   transform?: (context: Context, form: FormProp, value: any) => any;
   [key: string]: any;
 };
 
+export type UpdateReason = {
+  name: string;
+  type: ChangeType;
+};
+
 export type ChangeType = 'value' | 'error' | 'blur';
 
 export type FieldProp = {
-  value:any;
-  error:Error;
-  onChange:(value: any) => void; 
+  value: any;
+  error: Error;
+  onChange: (value: any) => void;
   onBlur: () => void;
-  focusRef:React.RefObject<{[key:string]:any}>
+  focusRef: React.RefObject<{ focus: () => void; [key: string]: any }>;
 };
