@@ -48,3 +48,11 @@ export type FieldConfig<Context = IndexObject, Props = PropsObject> = {
 };
 
 export type ChangeType = 'value' | 'error' | 'blur';
+
+export type FieldProp = {
+  value:any;
+  error:Error;
+  onChange:(value: any) => void; 
+  onBlur: () => void;
+  focusRef:React.RefObject<{[key:string]:any}>
+};
